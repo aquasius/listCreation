@@ -16,10 +16,10 @@ namespace UnitTestProject1
             CustomList<int> list1 = new CustomList<int>();
             int expected = 1;
             int actual;
-            int number1 = 6;
+            
 
             //act
-            list1.Add(number1);
+            list1.Add(6);
             actual = list1.Count;
             
             //assert
