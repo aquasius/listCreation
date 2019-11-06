@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CustomListProj
 {
-    public class MyCustomList<T>
+    public class CustomList<T>
     {
 
         //member variables 
@@ -14,30 +14,61 @@ namespace CustomListProj
         private int capacity;
         private int count;
 
-        public T this[int index] { get; set; }
 
-        public int Capacity { get; set; }
+
 
         //constructor
-        public MyCustomList()
-        {
-            count = 0;
 
+        public CustomList()
+        {
+            capacity = 4;
+            count = 0;
+            items = new T[capacity];
+
+        }
+        public int Count
+        {
+            get
+            {
+                return count;
+            }
         }
         //member methods
         public void Add(T item)
         {
-            items[count] = item;
+            if (count == capacity)
+            {
+                capacity *= 2;
+                T[] temp = new T[capacity];
+                for (int i = 0; i < count; i++)
+                {
+                    temp[i] = items[i];
+                }
+                temp[count] = item;
+
+               items = temp;
+            }
+            else
+            {
+                items[count] = item;
+            }
+            
             count += 1;
         }
         public bool Remove(T item)
         {
             return true;
         }
+
+        
+
+    
+    
+    
     
     
     }
 
-
+   
 
 }
