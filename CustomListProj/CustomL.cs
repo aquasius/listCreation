@@ -13,7 +13,7 @@ namespace CustomListProj
         private T[] items;
         private int capacity;
         private int count;
-
+        public T[] innerArray;
 
 
 
@@ -55,10 +55,22 @@ namespace CustomListProj
             
             count += 1;
         }
-        public bool Remove(T item)
+        public void Remove(T item)
         {
-            return true;
+            {
+                T[] temp = new T[capacity];
+                for (int i = 0; i < count; i++)
+                {
+                    if (items[i].Equals(item))
+                    {
+                        temp[i] = temp[i + 1];
+                        count--;
+                    }
+                }
+               items = temp;
+            }
         }
+    }
 
         
 
@@ -67,8 +79,8 @@ namespace CustomListProj
     
     
     
-    }
+}
 
    
 
-}
+
