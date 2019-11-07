@@ -10,7 +10,9 @@ namespace CustomListProj
     {
         static void Main(string[] args)
         {
-        
+            //CustomList<int> test = new CustomList<int>();
+
+            //Console.WriteLine(test[0]);
         
         }
     

@@ -13,7 +13,12 @@ namespace CustomListProj
         private T[] items;
         private int capacity;
         private int count;
-        public T[] innerArray;
+
+        public T this[int i]
+        {
+            get { return items[i]; }
+            set { items[i] = value; }
+        }
 
 
 
@@ -63,14 +68,17 @@ namespace CustomListProj
                 {
                     if (items[i].Equals(item))
                     {
-                        temp[i] = temp[i + 1];
+                        temp[i] = temp[i - 1];
                         count--;
                     }
                 }
-               items = temp;
+                items = temp;
             }
         }
     }
+        
+
+}
 
         
 
@@ -79,7 +87,7 @@ namespace CustomListProj
     
     
     
-}
+
 
    
 
