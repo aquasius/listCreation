@@ -8,7 +8,7 @@ namespace UnitTestProject1
     [TestClass]
     public class UnitTest1
     {
-    [TestMethod]
+        [TestMethod]
         public void CustomList_Add_AddOneNumberToCount()
         {
 
@@ -91,9 +91,9 @@ namespace UnitTestProject1
 
 
         }
-       
-        
-       [TestMethod]
+
+
+        [TestMethod]
 
         public void CustomList_Add_to_List_then_Remove_Index_2()
         {
@@ -103,7 +103,7 @@ namespace UnitTestProject1
             int actual;
             int value1 = 10;
             int value2 = 20;
-            
+
 
             //Act
             list5.Add(value1);
@@ -115,67 +115,91 @@ namespace UnitTestProject1
             Assert.AreEqual(expected, actual);
         }
 
-        [TestMethod]
         public void CustomList_Add_to_List_then_RemoveANumberAndFindValueOfIndex2()
         {
             //Arrange
             CustomList<int> list6 = new CustomList<int>();
-            int expected = 30;
+            int expected = 40;
             int actual;
             int value1 = 10;
             int value2 = 20;
             int value3 = 30;
             int value4 = 40;
-            
+            list6[2] = 40;
             //Act
             list6.Add(value1);
             list6.Add(value2);
             list6.Add(value3);
             list6.Add(value4);
-            list6.Remove(value4);
+            list6.Remove(value3);
             actual = list6[2];
 
             //Assert
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void CustomList_Add_to_List_Remove_3numbers_And_FindWhatsAtIndex3()
-        { 
+        public void CustomList_Add_to_List_Remove_2numbers_And_FindWhatsAtIndex3()
+        {
             //Arrange
-         CustomList<int> list7 = new CustomList<int>();
-         int expected = 50;
-         int actual;
-         int value1 = 10;
-         int value2 = 20;
-         int value3 = 30;
-         int value4 = 40;
-         int value5 = 50;
-         int value6 = 60;
-         
-          //Act
+            CustomList<int> list7 = new CustomList<int>();
+            
+            int value1 = 10;
+            int value2 = 20; 
+            int value3 = 30; 
+            int value4 = 40; 
+            int value5 = 50;
+            int expected = 50;
+            int actual;
+            list7[2] = 50;
+            //Act
             list7.Add(value1);
             list7.Add(value2);
             list7.Add(value3);
             list7.Add(value4);
             list7.Add(value5);
-            list7.Add(value6);
-            list7.Remove(value2);
+            list7.Remove(value3);
             list7.Remove(value4);
-            list7.Remove(value6);
-            actual = list7[3];
-           
+            actual = 0;
+
             //Assert
             Assert.AreEqual(expected, actual);
         }
 
 
 
+
+
+        //[TestMethod]
+        //public void CustomList_Add5_to_List_Remove_4numbers_And_FindWhatsAtIndex2()
+        //{
+        //    //Arrange
+        //    CustomList<int> list8 = new CustomList<int>();
+        //    int expected = 50;
+        //    int value1 = 10;
+        //    int value2 = 20;
+        //    int value3 = 30;
+        //    int value4 = 40;
+        //    int value5 = 50;
+        //    int actual;
+
+        //    //Act
+        //    list8.Add(value1);
+        //    list8.Add(value2);
+        //    list8.Add(value3);
+        //    list8.Add(value4);
+        //    list8.Add(value5);
+        //    list8.Remove(value2);
+
+        //    list8.Remove(value4);
+        //    actual = list8[3];
+
+        //    //Assert
+        //    Assert.AreEqual(expected, actual);
+        //}
+
     }
 
-
-
 }
-
 
 
 

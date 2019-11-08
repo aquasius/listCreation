@@ -68,13 +68,17 @@ namespace CustomListProj
                 {
                     if (items[i].Equals(item))
                     {
-                        temp[i] = temp[i - 1];
+                        temp[i] = temp[i + 1];
                         count--;
                     }
                 }
                 items = temp;
             }
         }
+        
+
+
+
     }
         
 
