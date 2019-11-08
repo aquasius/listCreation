@@ -63,16 +63,21 @@ namespace CustomListProj
         public void Remove(T item)
         {
             {
-                T[] temp = new T[capacity];
+                bool foundIndex = false;
+          
                 for (int i = 0; i < count; i++)
                 {
                     if (items[i].Equals(item))
                     {
-                        temp[i] = temp[i + 1];
+                        foundIndex = true;
+                    }
+                    if (foundIndex)
+                    {
+                        items[i] = items[i + 1];
                         count--;
                     }
                 }
-                items = temp;
+            
             }
         }
         

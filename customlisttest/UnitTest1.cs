@@ -66,24 +66,17 @@ namespace UnitTestProject1
             // arrange
             int expected = 8;
             int actual;
-            int number1 = 4;
-            int number2 = 5;
-            int number3 = 6;
-            int number4 = 7;
-            int number5 = 8;
-            int number6 = 9;
-            int number7 = 10;
-            int number8 = 11;
+            
 
             //act
-            list3.Add(number1);
-            list3.Add(number2);
-            list3.Add(number3);
-            list3.Add(number4);
-            list3.Add(number5);
-            list3.Add(number6);
-            list3.Add(number7);
-            list3.Add(number8);
+            list3.Add(4);
+            list3.Add(5);
+            list3.Add(6);
+            list3.Add(7);
+            list3.Add(8);
+            list3.Add(9);
+            list3.Add(10);
+            list3.Add(11);
             actual = list3.Count;
 
             //assert
@@ -121,17 +114,14 @@ namespace UnitTestProject1
             CustomList<int> list6 = new CustomList<int>();
             int expected = 40;
             int actual;
-            int value1 = 10;
-            int value2 = 20;
-            int value3 = 30;
-            int value4 = 40;
-            list6[2] = 40;
+           
+ 
             //Act
-            list6.Add(value1);
-            list6.Add(value2);
-            list6.Add(value3);
-            list6.Add(value4);
-            list6.Remove(value3);
+            list6.Add(10);
+            list6.Add(20);
+            list6.Add(30);
+            list6.Add(40);
+            list6.Remove(30);
             actual = list6[2];
 
             //Assert
@@ -143,23 +133,19 @@ namespace UnitTestProject1
             //Arrange
             CustomList<int> list7 = new CustomList<int>();
             
-            int value1 = 10;
-            int value2 = 20; 
-            int value3 = 30; 
-            int value4 = 40; 
-            int value5 = 50;
+   
             int expected = 50;
             int actual;
-            list7[2] = 50;
+        
             //Act
-            list7.Add(value1);
-            list7.Add(value2);
-            list7.Add(value3);
-            list7.Add(value4);
-            list7.Add(value5);
-            list7.Remove(value3);
-            list7.Remove(value4);
-            actual = 0;
+            list7.Add(10);
+            list7.Add(20);
+            list7.Add(30);
+            list7.Add(40);
+            list7.Add(50);
+            list7.Remove(30);
+            list7.Remove(40);
+            actual = list7[2];
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -169,33 +155,27 @@ namespace UnitTestProject1
 
 
 
-        //[TestMethod]
-        //public void CustomList_Add5_to_List_Remove_4numbers_And_FindWhatsAtIndex2()
-        //{
-        //    //Arrange
-        //    CustomList<int> list8 = new CustomList<int>();
-        //    int expected = 50;
-        //    int value1 = 10;
-        //    int value2 = 20;
-        //    int value3 = 30;
-        //    int value4 = 40;
-        //    int value5 = 50;
-        //    int actual;
+        [TestMethod]
+        public void CustomList_Add5_to_List_Remove_32numbers_And_CheckCount()
+        {
+            //Arrange
+            CustomList<int> list8 = new CustomList<int>();
+            int expected = 2;
+            int actual;
 
-        //    //Act
-        //    list8.Add(value1);
-        //    list8.Add(value2);
-        //    list8.Add(value3);
-        //    list8.Add(value4);
-        //    list8.Add(value5);
-        //    list8.Remove(value2);
+            //Act
+            list8.Add(10);
+            list8.Add(20);
+            list8.Add(30);
+            list8.Add(40);
+            list8.Add(50);
+            list8.Remove(20);
+            list8.Remove(40);
+            actual = list8.Count;
 
-        //    list8.Remove(value4);
-        //    actual = list8[3];
-
-        //    //Assert
-        //    Assert.AreEqual(expected, actual);
-        //}
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
 
     }
 
