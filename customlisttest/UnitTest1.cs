@@ -177,7 +177,24 @@ namespace UnitTestProject1
             Assert.AreEqual(expected, actual);
         }
 
+        [TestMethod]
+        public void Add_AddTwoStrings()
+        {
+            //Arrange
+            CustomList<string> listString = new CustomList<string>();
+            string item1 = "basketball";
+            string item2 = "football";
+
+            //Act
+            listString.Add(item1);
+            listString.Add(item2);
+
+            //Assert
+            Assert.AreEqual(2, listString.Count);
+        }
+
     }
+
 
 }
 

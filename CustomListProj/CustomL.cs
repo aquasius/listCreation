@@ -13,7 +13,7 @@ namespace CustomListProj
         private T[] items;
         private int capacity;
         private int count;
-
+        
         public T this[int i]
         {
             get { return items[i]; }
@@ -80,8 +80,16 @@ namespace CustomListProj
             
             }
         }
-        
 
+        public override string ToString()
+        {
+            string result = "";
+            foreach (T value in items)
+            {
+                result += value.ToString() + ", ";
+            }
+            return result;
+        }
 
 
     }
