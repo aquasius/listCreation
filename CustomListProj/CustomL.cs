@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CustomListProj
 {
-    public class CustomList<T> : IEnumerable<T>
+    public class CustomList<T> 
     {
 
         //member variables 
@@ -20,7 +20,13 @@ namespace CustomListProj
             set { items[i] = value; }
         }
 
-
+        public IEnumerator<T> GetEnumerator()
+        {
+            for (int i = 0; i < count; i++)
+            {
+                yield return items[i];
+            }
+        }
 
         //constructor
 
@@ -91,7 +97,8 @@ namespace CustomListProj
             return result;
         }
 
-        
+
+       
 
     }
 }

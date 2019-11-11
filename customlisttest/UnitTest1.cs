@@ -66,7 +66,7 @@ namespace UnitTestProject1
             // arrange
             int expected = 8;
             int actual;
-            
+
 
             //act
             list3.Add(4);
@@ -114,8 +114,8 @@ namespace UnitTestProject1
             CustomList<int> list6 = new CustomList<int>();
             int expected = 40;
             int actual;
-           
- 
+
+
             //Act
             list6.Add(10);
             list6.Add(20);
@@ -132,11 +132,11 @@ namespace UnitTestProject1
         {
             //Arrange
             CustomList<int> list7 = new CustomList<int>();
-            
-   
+
+
             int expected = 50;
             int actual;
-        
+
             //Act
             list7.Add(10);
             list7.Add(20);
@@ -193,36 +193,7 @@ namespace UnitTestProject1
             Assert.AreEqual(2, listString.Count);
         }
 
-        [TestMethod]
-        public void AddLists_AddIntLists_IntListsAddedTogether()
-        {
-            //Arrange
-            CustomList<int> custom1 = new CustomList<int>() { 1, 2 };
-            CustomList<int> custom2 = new CustomList<int>() { 3, 4 };
-            CustomList<int> custom3 = new CustomList<int>();
-
-            //Act
-            custom3 = custom1 + custom2;
-
-            //Assert
-            Assert.AreEqual(4, custom3.Count);
-        }
-        [TestMethod]
-        public void AddLists_AddIntLists_IntListAddedToEnd()
-        {
-            //Arrange
-            CustomList<int> custom1 = new CustomList<int>() { 1, 2 };
-            CustomList<int> custom2 = new CustomList<int>() { 3, 4 };
-            CustomList<int> custom3 = new CustomList<int>();
-
-            //Act
-            custom3 = custom1 + custom2;
-
-            //Assert
-            Assert.AreEqual(3, custom3[2]);
-        }
-
-    }
+    }    
 
 
 }
