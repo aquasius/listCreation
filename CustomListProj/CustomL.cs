@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace CustomListProj
 {
-    public class CustomList<T>
+    public class CustomList<T> : IEnumerable<T>
     {
 
         //member variables 
         private T[] items;
         private int capacity;
         private int count;
-        
+
         public T this[int i]
         {
             get { return items[i]; }
@@ -51,20 +51,20 @@ namespace CustomListProj
                 }
                 temp[count] = item;
 
-               items = temp;
+                items = temp;
             }
             else
             {
                 items[count] = item;
             }
-            
+
             count += 1;
         }
         public void Remove(T item)
         {
             {
                 bool foundIndex = false;
-          
+
                 for (int i = 0; i < count; i++)
                 {
                     if (items[i].Equals(item))
@@ -77,7 +77,7 @@ namespace CustomListProj
                         count--;
                     }
                 }
-            
+
             }
         }
 
@@ -91,10 +91,9 @@ namespace CustomListProj
             return result;
         }
 
-
-    }
         
 
+    }
 }
 
         

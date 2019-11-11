@@ -156,7 +156,7 @@ namespace UnitTestProject1
 
 
         [TestMethod]
-        public void CustomList_Add5_to_List_Remove_32numbers_And_CheckCount()
+        public void CustomList_Add5_to_List_Remove_2numbers_And_CheckCount()
         {
             //Arrange
             CustomList<int> list8 = new CustomList<int>();
@@ -191,6 +191,35 @@ namespace UnitTestProject1
 
             //Assert
             Assert.AreEqual(2, listString.Count);
+        }
+
+        [TestMethod]
+        public void AddLists_AddIntLists_IntListsAddedTogether()
+        {
+            //Arrange
+            CustomList<int> custom1 = new CustomList<int>() { 1, 2 };
+            CustomList<int> custom2 = new CustomList<int>() { 3, 4 };
+            CustomList<int> custom3 = new CustomList<int>();
+
+            //Act
+            custom3 = custom1 + custom2;
+
+            //Assert
+            Assert.AreEqual(4, custom3.Count);
+        }
+        [TestMethod]
+        public void AddLists_AddIntLists_IntListAddedToEnd()
+        {
+            //Arrange
+            CustomList<int> custom1 = new CustomList<int>() { 1, 2 };
+            CustomList<int> custom2 = new CustomList<int>() { 3, 4 };
+            CustomList<int> custom3 = new CustomList<int>();
+
+            //Act
+            custom3 = custom1 + custom2;
+
+            //Assert
+            Assert.AreEqual(3, custom3[2]);
         }
 
     }
